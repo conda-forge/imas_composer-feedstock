@@ -3,7 +3,7 @@
 
 package:
   name: {{ name|lower }}
-  version: {{ version }}
+  version: "{{ version }}"
 source:
   url: https://github.com/GA-FDP/imas_composer/archive/refs/tags/v{{ version }}.tar.gz
   sha256: b55bdc2572579fbcbc8f790472e4167ec56233a61d42ff8d0414387eb75af4e8
