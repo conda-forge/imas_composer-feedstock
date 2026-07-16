@@ -1,12 +1,12 @@
 {% set name = "imas_composer" %}
-{% set version = "0.2" %}
+{% set version = "0.2.2" %}
 
 package:
   name: {{ name|lower }}
   version: "{{ version }}"
 source:
   url: https://github.com/GA-FDP/imas_composer/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: b55bdc2572579fbcbc8f790472e4167ec56233a61d42ff8d0414387eb75af4e8
+  sha256: 4a4970fe9bdbc94f5150659d7ba61f818e4dc9a566949448d392a6a75c183778
 
 build:
   noarch: python
