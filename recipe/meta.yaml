@@ -42,7 +42,7 @@ outputs:
 
   # Metapackage supplying the optional GUI stack for iri-cake-viewer
   # (conda equivalent of `pip install imas_composer[plots]`)
-  - name: imas_composer-plots
+  - name: imas_composer_plots
     build:
       noarch: python
     requirements:
