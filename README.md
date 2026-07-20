@@ -39,6 +39,7 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-imas__composer-green.svg)](https://anaconda.org/conda-forge/imas_composer) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/imas_composer.svg)](https://anaconda.org/conda-forge/imas_composer) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/imas_composer.svg)](https://anaconda.org/conda-forge/imas_composer) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/imas_composer.svg)](https://anaconda.org/conda-forge/imas_composer) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-imas__composer--plots-green.svg)](https://anaconda.org/conda-forge/imas_composer-plots) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/imas_composer-plots.svg)](https://anaconda.org/conda-forge/imas_composer-plots) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/imas_composer-plots.svg)](https://anaconda.org/conda-forge/imas_composer-plots) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/imas_composer-plots.svg)](https://anaconda.org/conda-forge/imas_composer-plots) |
 
 Installing imas_composer
 ========================
@@ -50,16 +51,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `imas_composer` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `imas_composer, imas_composer-plots` can be installed with `conda`:
 
 ```
-conda install imas_composer
+conda install imas_composer imas_composer-plots
 ```
 
 or with `mamba`:
 
 ```
-mamba install imas_composer
+mamba install imas_composer imas_composer-plots
 ```
 
 It is possible to list all of the versions of `imas_composer` available on your platform with `conda`:
