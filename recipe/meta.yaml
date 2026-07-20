@@ -1,12 +1,12 @@
 {% set name = "imas_composer" %}
-{% set version = "0.2.2" %}
+{% set version = "0.2.3" %}
 
 package:
   name: {{ name|lower }}
   version: "{{ version }}"
 source:
   url: https://github.com/GA-FDP/imas_composer/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 4a4970fe9bdbc94f5150659d7ba61f818e4dc9a566949448d392a6a75c183778
+  sha256: e0630797d632c3e5ddf1772068e54c1755f4e0bc6177709f84fe9407ea32d655
 
 build:
   noarch: python
@@ -46,6 +46,8 @@ outputs:
     build:
       noarch: python
     requirements:
+      host:
+        - python {{ python_min }}
       run:
         - python >={{ python_min }}
         - {{ pin_subpackage('imas_composer', exact=True) }}
