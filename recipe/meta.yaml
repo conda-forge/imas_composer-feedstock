@@ -1,39 +1,71 @@
 {% set name = "imas_composer" %}
-{% set version = "0.2" %}
+{% set version = "0.2.4" %}
 
 package:
   name: {{ name|lower }}
   version: "{{ version }}"
 source:
   url: https://github.com/GA-FDP/imas_composer/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: b55bdc2572579fbcbc8f790472e4167ec56233a61d42ff8d0414387eb75af4e8
+  sha256: 75b67e6adab32febfcd6680d2910d0db9aafe5a43a1f4ed901454f55d10904dc
 
 build:
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
 
-requirements:
-  host:
-    - python {{ python_min }}
-    - pip
-    - setuptools >=61.0
-    - wheel
-  run:
-    - python >={{ python_min }}
-    - numpy >=1.20
-    - pyyaml >=5.4
-    - awkward >=2.0
+outputs:
+  - name: imas_composer
+    script: install_base.sh
+    build:
+      noarch: python
+      entry_points:
+        - iri-cake-viewer = imas_composer.plots.iri_cake_viewer:main
+    requirements:
+      host:
+        - python {{ python_min }}
+        - pip
+        - setuptools >=61.0
+        - wheel
+      run:
+        - python >={{ python_min }}
+        - numpy >=1.20
+        - pyyaml >=5.4
+        - awkward >=2.0
+    test:
+      imports:
+        - imas_composer
+        - imas_composer.ids
+      commands:
+        - pip check
+      requires:
+        - python {{ python_min }}
+        - pip
 
-test:
-  imports:
-    - imas_composer
-    - imas_composer.ids
-  commands:
-    - pip check
-  requires:
-    - python {{ python_min }}
-    - pip
+  # Metapackage supplying the optional GUI stack for iri-cake-viewer
+  # (conda equivalent of `pip install imas_composer[plots]`)
+  - name: imas_composer_plots
+    build:
+      noarch: python
+    requirements:
+      host:
+        - python {{ python_min }}
+      run:
+        - python >={{ python_min }}
+        - {{ pin_subpackage('imas_composer', exact=True) }}
+        - pyqtgraph
+        - pyside6
+        - scipy
+        - contourpy
+        - pyodbc
+        - freetds
+        - mdsplus
+        - omas
+    test:
+      imports:
+        - imas_composer.plots
+      commands:
+        - iri-cake-viewer --help
+      requires:
+        - python {{ python_min }}
 
 about:
   home: https://github.com/GA-FDP/imas_composer

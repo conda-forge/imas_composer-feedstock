@@ -23,10 +23,11 @@ Current build status
 ====================
 
 
-<table><tr><td>All platforms:</td>
+<table><tr>
+    <td>All platforms:</td>
     <td>
-      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=27200&branchName=main">
-        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/imas_composer-feedstock?branchName=main">
+      <a href="https://github.com/conda-forge/imas_composer-feedstock/actions/workflows/conda-build.yml">
+        <img src="https://github.com/conda-forge/imas_composer-feedstock/actions/workflows/conda-build.yml/badge.svg?event=push&branch=main">
       </a>
     </td>
   </tr>
@@ -38,6 +39,7 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-imas__composer-green.svg)](https://anaconda.org/conda-forge/imas_composer) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/imas_composer.svg)](https://anaconda.org/conda-forge/imas_composer) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/imas_composer.svg)](https://anaconda.org/conda-forge/imas_composer) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/imas_composer.svg)](https://anaconda.org/conda-forge/imas_composer) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-imas__composer__plots-green.svg)](https://anaconda.org/conda-forge/imas_composer_plots) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/imas_composer_plots.svg)](https://anaconda.org/conda-forge/imas_composer_plots) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/imas_composer_plots.svg)](https://anaconda.org/conda-forge/imas_composer_plots) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/imas_composer_plots.svg)](https://anaconda.org/conda-forge/imas_composer_plots) |
 
 Installing imas_composer
 ========================
@@ -49,16 +51,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `imas_composer` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `imas_composer, imas_composer_plots` can be installed with `conda`:
 
 ```
-conda install imas_composer
+conda install imas_composer imas_composer_plots
 ```
 
 or with `mamba`:
 
 ```
-mamba install imas_composer
+mamba install imas_composer imas_composer_plots
 ```
 
 It is possible to list all of the versions of `imas_composer` available on your platform with `conda`:
