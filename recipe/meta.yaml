@@ -1,12 +1,12 @@
 {% set name = "imas_composer" %}
-{% set version = "0.2.3" %}
+{% set version = "0.2.4" %}
 
 package:
   name: {{ name|lower }}
   version: "{{ version }}"
 source:
   url: https://github.com/GA-FDP/imas_composer/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: e0630797d632c3e5ddf1772068e54c1755f4e0bc6177709f84fe9407ea32d655
+  sha256: 75b67e6adab32febfcd6680d2910d0db9aafe5a43a1f4ed901454f55d10904dc
 
 build:
   noarch: python
@@ -56,6 +56,7 @@ outputs:
         - scipy
         - contourpy
         - pyodbc
+        - freetds
     test:
       imports:
         - imas_composer.plots
