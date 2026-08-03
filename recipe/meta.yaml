@@ -57,6 +57,7 @@ outputs:
         - contourpy
         - pyodbc
         - freetds
+        - omas
     test:
       imports:
         - imas_composer.plots
